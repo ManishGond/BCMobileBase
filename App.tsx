@@ -1,14 +1,22 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
+import LandingPage from './src/screens/LandingScreen/LandingPage';
 
-const App = () => {
+const Stack = createNativeStackNavigator();
+
+function RootStack() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Landing" component={LandingPage} />
+    </Stack.Navigator>
   );
-};
+}
 
-export default App;
-
-const styles = StyleSheet.create({});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
+  );
+}
