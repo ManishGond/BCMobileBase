@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react';
 import LandingPage from './src/screens/LandingScreen/LandingPage';
 import OnboardingScreen from './src/screens/LandingScreen/OnboardingScreen';
 import {getItem} from './src/utils/asynStorage';
+import {AuthProvider} from './src/context/AuthContext';
 
 export type RootStackParamList = {
   Onboarding: undefined;
@@ -22,25 +23,26 @@ function RootStack() {
   const checkIfAlreadyOnboard = async () => {
     const onboarded = await getItem('onboarded');
     setShowOnboarding(!onboarded);
-    console.log(onboarded + ' ah yo!');
   };
   if (showOnboarding == null) {
     return null;
   }
   if (showOnboarding) {
     return (
-      <Stack.Navigator initialRouteName="Onboarding">
-        <Stack.Screen
-          name="Onboarding"
-          options={{headerShown: false}}
-          component={OnboardingScreen}
-        />
-        <Stack.Screen
-          name="Landing"
-          options={{headerShown: false}}
-          component={LandingPage}
-        />
-      </Stack.Navigator>
+      <AuthProvider>
+        <Stack.Navigator initialRouteName="Onboarding">
+          <Stack.Screen
+            name="Onboarding"
+            options={{headerShown: false}}
+            component={OnboardingScreen}
+          />
+          <Stack.Screen
+            name="Landing"
+            options={{headerShown: false}}
+            component={LandingPage}
+          />
+        </Stack.Navigator>
+      </AuthProvider>
     );
   } else {
     return (

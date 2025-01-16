@@ -49,7 +49,7 @@ const OnboardingScreen = () => {
               <View>
                 <LottieView
                   style={styles.lottieAnimation}
-                  source={require('../assets/lotte/animation1.json')}
+                  source={require('../../../assets/lotte/animation1.json')}
                   autoPlay={true}
                   loop={true}
                 />
@@ -64,7 +64,7 @@ const OnboardingScreen = () => {
               <View>
                 <LottieView
                   style={styles.lottieAnimation}
-                  source={require('../assets/lotte/animation3.json')}
+                  source={require('../../../assets/lotte/animation3.json')}
                   autoPlay={true}
                   loop={true}
                 />
@@ -79,7 +79,7 @@ const OnboardingScreen = () => {
               <View>
                 <LottieView
                   style={styles.lottieAnimation}
-                  source={require('../assets/lotte/animation2.json')}
+                  source={require('../../../assets/lotte/animation2.json')}
                   autoPlay={true}
                   loop={true}
                 />
