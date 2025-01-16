@@ -6,12 +6,12 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import Onboarding from 'react-native-onboarding-swiper';
 import LottieView from 'lottie-react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../App';
+import {setItem} from '../../utils/asynStorage';
 
 const {width} = Dimensions.get('window');
 
@@ -21,7 +21,9 @@ type OnboardingScreenNavigationProp =
 const OnboardingScreen = () => {
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
   const handleDone = () => {
+    setItem('onboarded', true);
     navigation.navigate('Landing');
+    console.log('Logged In!');
   };
 
   const doneButton = ({...props}) => {
