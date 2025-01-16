@@ -1,4 +1,10 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Onboarding from 'react-native-onboarding-swiper';
@@ -18,11 +24,21 @@ const OnboardingScreen = () => {
     navigation.navigate('Landing');
   };
 
+  const doneButton = ({...props}) => {
+    return (
+      <TouchableOpacity {...props} style={styles.button}>
+        <Text>Done</Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Onboarding
         onDone={handleDone}
         onSkip={handleDone}
+        bottomBarHighlight={false}
+        DoneButtonComponent={doneButton}
         containerStyles={{paddingHorizontal: 15}}
         pages={[
           {
@@ -81,4 +97,10 @@ export default OnboardingScreen;
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: 'white'},
   lottieAnimation: {width: width * 0.9, height: width},
+  button: {
+    padding: 20,
+    backgroundColor: 'white',
+    borderTopLeftRadius: '100%',
+    borderBottomLeftRadius: '100%',
+  },
 });

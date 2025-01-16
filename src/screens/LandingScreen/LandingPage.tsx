@@ -2,11 +2,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-type Props = {};
-
-const LandingPage = (props: Props) => {
+const LandingPage = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <Text>LandingPage</Text>
     </SafeAreaView>
   );
@@ -14,4 +12,9 @@ const LandingPage = (props: Props) => {
 
 export default LandingPage;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+});
