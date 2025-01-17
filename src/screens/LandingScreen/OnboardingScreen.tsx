@@ -12,6 +12,8 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../../App';
 import {setItem} from '../../utils/asynStorage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Animated, {FadeInLeft} from 'react-native-reanimated';
 
 const {width} = Dimensions.get('window');
 
@@ -29,7 +31,10 @@ const OnboardingScreen = () => {
   const doneButton = ({...props}) => {
     return (
       <TouchableOpacity {...props} style={styles.button}>
-        <Text>Done</Text>
+        <Animated.View
+          entering={FadeInLeft.duration(1000).delay(200).springify()}>
+          <FontAwesome name="arrow-right" size={20} color="#000" />
+        </Animated.View>
       </TouchableOpacity>
     );
   };
@@ -100,7 +105,7 @@ const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: 'white'},
   lottieAnimation: {width: width * 0.9, height: width},
   button: {
-    padding: 20,
+    padding: 15,
     backgroundColor: 'white',
     borderTopLeftRadius: '100%',
     borderBottomLeftRadius: '100%',
