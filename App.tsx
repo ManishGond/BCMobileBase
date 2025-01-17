@@ -5,52 +5,58 @@ import LandingPage from './src/screens/LandingScreen/LandingPage';
 import OnboardingScreen from './src/screens/LandingScreen/OnboardingScreen';
 import {getItem} from './src/utils/asynStorage';
 import {AuthProvider} from './src/context/AuthContext';
+import LoginPage from './src/screens/LoginScreen/LoginPage';
+import SignupPage from './src/screens/SignupScreen/SignupPage';
 
 export type RootStackParamList = {
   Onboarding: undefined;
   Landing: undefined;
-  Home: undefined;
+  Login: undefined;
+  Signup: undefined;
 };
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-  const [showOnboarding, setShowOnboarding] = useState<boolean | null>(null);
+  const [initialScreen, setInitialScreen] = useState<string | null>(null);
+
   useEffect(() => {
-    checkIfAlreadyOnboard();
+    checkInitialScreen();
   }, []);
 
-  const checkIfAlreadyOnboard = async () => {
+  const checkInitialScreen = async () => {
     const onboarded = await getItem('onboarded');
-    setShowOnboarding(!onboarded);
+    const loggedIn = await getItem('loggedIn');
+    if (!onboarded) {
+      setInitialScreen('Onboarding');
+    } else if (loggedIn) {
+      setInitialScreen('Landing');
+    } else {
+      setInitialScreen('Login');
+    }
   };
-  if (showOnboarding == null) {
-    return null;
+
+  if (!initialScreen) {
+    return null; // You can return a loader here
   }
-  if (showOnboarding) {
-    return (
-      <AuthProvider>
-        <Stack.Navigator initialRouteName="Onboarding">
-          <Stack.Screen
-            name="Onboarding"
-            options={{headerShown: false}}
-            component={OnboardingScreen}
-          />
-          <Stack.Screen
-            name="Landing"
-            options={{headerShown: false}}
-            component={LandingPage}
-          />
-        </Stack.Navigator>
-      </AuthProvider>
-    );
-  } else {
-    return (
-      <Stack.Navigator initialRouteName="Landing">
+
+  return (
+    <AuthProvider>
+      <Stack.Navigator initialRouteName={initialScreen}>
         <Stack.Screen
           name="Onboarding"
           options={{headerShown: false}}
           component={OnboardingScreen}
+        />
+        <Stack.Screen
+          name="Login"
+          options={{headerShown: false}}
+          component={LoginPage}
+        />
+        <Stack.Screen
+          name="Signup"
+          options={{headerShown: false}}
+          component={SignupPage}
         />
         <Stack.Screen
           name="Landing"
@@ -58,8 +64,8 @@ function RootStack() {
           component={LandingPage}
         />
       </Stack.Navigator>
-    );
-  }
+    </AuthProvider>
+  );
 }
 
 export default function App(): JSX.Element {

@@ -23,8 +23,8 @@ type OnboardingScreenNavigationProp =
 const OnboardingScreen = () => {
   const navigation = useNavigation<OnboardingScreenNavigationProp>();
   const handleDone = () => {
-    setItem('onboarded', true);
-    navigation.navigate('Landing');
+    setItem('goToLogin', true);
+    navigation.navigate('Login');
     console.log('Logged In!');
   };
 
