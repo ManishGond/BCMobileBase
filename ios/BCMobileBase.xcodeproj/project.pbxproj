@@ -21,6 +21,7 @@
 		D4FB825E9BCD46EDA7055A1D /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF9A58FC0E074303B932DCF3 /* Roboto-Medium.ttf */; };
 		083F691894FE4D7CB8E211DD /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DFF22E5A79344CFB5172D0D /* Roboto-MediumItalic.ttf */; };
 		DB5A9B823158409E91751C42 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 907D0A7513FD49AF9499068A /* Roboto-Regular.ttf */; };
+		014CCF9FD42B41888C675F49 /* PlaywriteVN-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7282250B71764037B56B183F /* PlaywriteVN-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FF9A58FC0E074303B932DCF3 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0DFF22E5A79344CFB5172D0D /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Roboto-MediumItalic.ttf"; path = "../assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		907D0A7513FD49AF9499068A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7282250B71764037B56B183F /* PlaywriteVN-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "PlaywriteVN-VariableFont_wght.ttf"; path = "../assets/fonts/PlaywriteVN-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				FF9A58FC0E074303B932DCF3 /* Roboto-Medium.ttf */,
 				0DFF22E5A79344CFB5172D0D /* Roboto-MediumItalic.ttf */,
 				907D0A7513FD49AF9499068A /* Roboto-Regular.ttf */,
+				7282250B71764037B56B183F /* PlaywriteVN-VariableFont_wght.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				D4FB825E9BCD46EDA7055A1D /* Roboto-Medium.ttf in Resources */,
 				083F691894FE4D7CB8E211DD /* Roboto-MediumItalic.ttf in Resources */,
 				DB5A9B823158409E91751C42 /* Roboto-Regular.ttf in Resources */,
+				014CCF9FD42B41888C675F49 /* PlaywriteVN-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

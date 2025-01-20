@@ -25,7 +25,6 @@ const OnboardingScreen = () => {
   const handleDone = () => {
     setItem('goToLogin', true);
     navigation.navigate('Login');
-    console.log('Logged In!');
   };
 
   const doneButton = ({...props}) => {

@@ -22,6 +22,7 @@ const LoginPage = () => {
       index: 0,
       routes: [{name: 'Landing'}],
     });
+    console.log('Logged In!');
   };
 
   const handleSignupRedirect = () => {
@@ -46,7 +47,7 @@ const LoginPage = () => {
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
-        placeholder="Email"
+        placeholder="mail@aptean.com"
         placeholderTextColor={'black'}
         keyboardType="email-address"
       />
@@ -59,8 +60,11 @@ const LoginPage = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleSignupRedirect}>
-        <Text style={styles.link}>Don't have an account? Sign up</Text>
+      <TouchableOpacity
+        onPress={handleSignupRedirect}
+        style={{flexDirection: 'row', marginTop: 20}}>
+        <Text>Don't have an account? </Text>
+        <Text style={styles.link}>Sign up</Text>
       </TouchableOpacity>
     </View>
   );
@@ -87,7 +91,12 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
-  title: {fontSize: 24, marginBottom: 20, fontWeight: 'bold'},
+  title: {
+    fontSize: 32,
+    marginBottom: 20,
+    fontWeight: 'bold',
+    fontFamily: 'PlaywriteVN-VariableFont_wght',
+  },
   input: {
     width: '100%',
     padding: 15,
@@ -99,10 +108,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#34d399',
     padding: 15,
+    width: '100%',
     borderRadius: 5,
     alignItems: 'center',
     marginTop: 10,
   },
   buttonText: {color: '#fff', fontWeight: 'bold'},
-  link: {marginTop: 20, color: '#007bff', textDecorationLine: 'underline'},
+  link: {color: '#007bff', textDecorationLine: 'underline', fontWeight: 'bold'},
 });
