@@ -33,6 +33,7 @@ const SearchPage = () => {
         <TextInput
           style={styles.searchInput}
           placeholder="Search options"
+          placeholderTextColor={'black'}
           value={query}
           onChangeText={handleSearch}
         />
@@ -70,7 +71,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     marginLeft: 10,
-    padding: 5,
+    padding: 10,
+    color: 'black',
     backgroundColor: '#e0e0e0',
     borderRadius: 10,
   },

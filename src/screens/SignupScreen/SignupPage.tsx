@@ -30,7 +30,7 @@ const SignupPage = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Signup</Text>
+      <Text style={styles.title}>Register</Text>
       <TextInput
         style={styles.input}
         placeholder="Name"
@@ -62,10 +62,13 @@ const SignupPage = () => {
         placeholderTextColor={'black'}
       />
       <TouchableOpacity style={styles.button} onPress={handleSignup}>
-        <Text style={styles.buttonText}>Signup</Text>
+        <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleLoginRedirect}>
-        <Text style={styles.link}>Already have an account? Login</Text>
+      <TouchableOpacity
+        onPress={handleLoginRedirect}
+        style={{flexDirection: 'row', marginTop: 20}}>
+        <Text>Already have an account? </Text>
+        <Text style={styles.link}>Log In</Text>
       </TouchableOpacity>
     </View>
   );
@@ -90,12 +93,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   button: {
-    backgroundColor: '#34d399',
+    backgroundColor: '#29828e',
     padding: 15,
     borderRadius: 5,
+    width: '100%',
     alignItems: 'center',
     marginTop: 10,
   },
   buttonText: {color: '#fff', fontWeight: 'bold'},
-  link: {marginTop: 20, color: '#007bff', textDecorationLine: 'underline'},
+  link: {color: '#007bff', textDecorationLine: 'underline', fontWeight: 'bold'},
 });

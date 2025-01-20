@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 40,
     left: 20,
-    backgroundColor: '#34d399',
+    backgroundColor: '#29828e',
     padding: 10,
     borderRadius: 5,
   },
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   button: {
-    backgroundColor: '#34d399',
+    backgroundColor: '#29828e',
     padding: 15,
     width: '100%',
     borderRadius: 5,

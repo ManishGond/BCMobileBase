@@ -58,13 +58,15 @@ const LandingPage = () => {
     });
   };
 
+  const handleProfilePress = () => {
+    navigation.navigate('Profile'); // Navigate to the ProfilePage
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <TouchableOpacity
-          onPress={() => console.log('Profile pressed')}
-          style={styles.profile}>
+        <TouchableOpacity onPress={handleProfilePress} style={styles.profile}>
           <FontAwesome name="user-circle" size={30} color={'#000'} />
         </TouchableOpacity>
 
@@ -76,7 +78,11 @@ const LandingPage = () => {
               style={styles.logo}
               resizeMode="contain"
             />
-            <Text style={styles.headerTitle}>BCMobile</Text>
+            <View style={styles.titleContainer}>
+              <Text style={styles.headerTitle}>BC</Text>
+              <Text style={styles.headerMobile}> Mobile</Text>
+              <Text style={styles.headerPro}>Pro</Text>
+            </View>
           </View>
         )}
 
@@ -133,15 +139,39 @@ const styles = StyleSheet.create({
     flex: 1, // Center-align the title container
   },
   logo: {
-    width: 30, // Adjust size as needed
-    height: 30,
-    marginRight: 8, // Spacing between the logo and title
+    width: 28, // Adjust size as needed
+    height: 28,
+    marginRight: 4, // Spacing between the logo and title
   },
   headerTitle: {
     fontWeight: 'bold',
     fontSize: 20,
     color: '#000',
     fontFamily: 'Roboto-Bold',
+  },
+  titleContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-end', // Align the "Pro" text below "Mobile"
+  },
+  headerMobile: {
+    fontSize: 15,
+    fontWeight: '500',
+    marginBottom: 1,
+  },
+  headerPro: {
+    fontWeight: 'bold',
+    fontSize: 12,
+    color: 'white',
+    paddingHorizontal: 6,
+    paddingVertical: 4,
+    backgroundColor: '#29828e',
+    borderRadius: 6,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 2,
+    margin: 3,
   },
   header: {
     flexDirection: 'row',

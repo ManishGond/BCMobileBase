@@ -8,6 +8,12 @@ import {
 } from 'react-native';
 import React from 'react';
 
+// Function to get a random color
+const getRandomColor = () => {
+  const colors = ['#000000', '#29828e']; // Black and light blue
+  return colors[Math.floor(Math.random() * colors.length)];
+};
+
 const HomePage = () => {
   const options = [
     {
@@ -53,7 +59,10 @@ const HomePage = () => {
             key={index}
             style={styles.card}
             onPress={() => handleCardPress(option.title)}>
-            <Image source={option.image} style={styles.cardImage} />
+            <Image
+              source={option.image}
+              style={[styles.cardImage, {tintColor: getRandomColor()}]} // Apply random color tint
+            />
             <Text style={styles.cardText}>{option.title}</Text>
           </TouchableOpacity>
         ))}

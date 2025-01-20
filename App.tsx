@@ -8,7 +8,9 @@ import {AuthProvider} from './src/context/AuthContext';
 import LoginPage from './src/screens/LoginScreen/LoginPage';
 import SignupPage from './src/screens/SignupScreen/SignupPage';
 import SearchPage from './src/screens/ComponentScreen/SearchPage';
+import ProfilePage from './src/screens/ProfileScreen/ProfilePage';
 
+// Define your type correctly for the stack navigation
 export type RootStackParamList = {
   Onboarding: undefined;
   Landing: undefined;
@@ -16,12 +18,15 @@ export type RootStackParamList = {
   Signup: undefined;
   Home: undefined;
   Search: {query: string};
+  Profile: undefined;
 };
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>(); // Ensure to pass the correct type here
 
 function RootStack() {
-  const [initialScreen, setInitialScreen] = useState<string | null>(null);
+  const [initialScreen, setInitialScreen] = useState<
+    keyof RootStackParamList | null
+  >(null);
 
   useEffect(() => {
     checkInitialScreen();
@@ -67,10 +72,13 @@ function RootStack() {
           component={LandingPage}
         />
         <Stack.Screen
-          name="Search" // Add the Search screen
-          options={{
-            headerShown: false, // Adjust this if you want a header
-          }}
+          name="Profile"
+          options={{headerShown: false}}
+          component={ProfilePage}
+        />
+        <Stack.Screen
+          name="Search"
+          options={{headerShown: false}}
           component={SearchPage}
         />
       </Stack.Navigator>
