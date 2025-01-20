@@ -1,12 +1,13 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
-import LandingPage from './src/screens/LandingScreen/LandingPage';
-import OnboardingScreen from './src/screens/LandingScreen/OnboardingScreen';
+import LandingPage from './src/screens/ComponentScreen/LandingPage';
+import OnboardingScreen from './src/screens/ComponentScreen/OnboardingScreen';
 import {getItem} from './src/utils/asynStorage';
 import {AuthProvider} from './src/context/AuthContext';
 import LoginPage from './src/screens/LoginScreen/LoginPage';
 import SignupPage from './src/screens/SignupScreen/SignupPage';
+import SearchPage from './src/screens/ComponentScreen/SearchPage';
 
 export type RootStackParamList = {
   Onboarding: undefined;
@@ -14,6 +15,7 @@ export type RootStackParamList = {
   Login: undefined;
   Signup: undefined;
   Home: undefined;
+  Search: {query: string};
 };
 
 const Stack = createNativeStackNavigator();
@@ -63,6 +65,13 @@ function RootStack() {
           name="Landing"
           options={{headerShown: false}}
           component={LandingPage}
+        />
+        <Stack.Screen
+          name="Search" // Add the Search screen
+          options={{
+            headerShown: false, // Adjust this if you want a header
+          }}
+          component={SearchPage}
         />
       </Stack.Navigator>
     </AuthProvider>
