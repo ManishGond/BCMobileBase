@@ -1,6 +1,6 @@
-# 🚀 MyApp – Seamless Onboarding, Personalized Experience
+# 🚀 BCMobile – Seamless Onboarding, Personalized Experience
 
-Welcome to **MyApp**, a sleek and intuitive app designed for effortless user onboarding, personalized avatars, and a smooth UI experience from sign-up to logout.
+Welcome to **BCMobile**, a sleek and intuitive app designed for effortless user onboarding, personalized avatars, and a smooth UI experience from sign-up to logout.
 
 ---
 
