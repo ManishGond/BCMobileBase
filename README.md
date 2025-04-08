@@ -1,1 +1,9 @@
-
+![Register Screen](https://github.com/user-attachments/assets/56411309-8cc5-4002-82f7-99fba5a83df2)
+![Login Screen](https://github.com/user-attachments/assets/6c60309c-4e18-46ec-b412-0f3c382f3717)
+![Onboarding Screen 1](https://github.com/user-attachments/assets/c07c7994-e482-4c51-95c6-83f94d9ca7ac)
+![Onboarding Screen 2](https://github.com/user-attachments/assets/41ff55c1-4b2f-4925-80a9-6e1136e80497)
+![Onboarding Screen 3](https://github.com/user-attachments/assets/8cce6391-2d77-47d2-9182-cfa2704612e1)
+![Avatar Screen](https://github.com/user-attachments/assets/d41e62e2-a236-4f5f-9142-26ca8aae0bd9)
+![Main Screen 1](https://github.com/user-attachments/assets/65e081a8-1f23-43ba-a3bf-94194458cbf3)
+![Main Screen 2](https://github.com/user-attachments/assets/928bc66d-fc50-46de-8974-49251a0c69a4)
+![Logout Screen](https://github.com/user-attachments/assets/7a4b3a78-bfd1-4fd0-b7c5-3f7147c77cb3)
